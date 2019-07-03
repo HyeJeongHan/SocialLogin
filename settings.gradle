@@ -1,1 +1,1 @@
-include ':app', ':librarytest'
+include ':app', ':SocialLoginModule', ':naveridlogin_android_sdk_4.2.5'

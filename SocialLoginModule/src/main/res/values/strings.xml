@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">LibraryTest</string>
+    <string name="kakao_app_key">83a46ef19f9b9cdf7d06c7981be2c30f</string>
+    <string name="facebook_app_key">1209820455858985</string>
+</resources>
