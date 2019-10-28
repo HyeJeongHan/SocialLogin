@@ -6,36 +6,34 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import com.facebook.CallbackManager;
-import com.facebook.FacebookSdk;
 import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.common.SignInButton;
 import com.nhn.android.naverlogin.ui.view.OAuthLoginButton;
 import com.nomadconnection.socialLogin.data.Social;
 import com.nomadconnection.socialLogin.data.SocialLoginUser;
 
-public class LoginPresenter implements LoginContract.Presenter, LoginModel.onClickButtonListener {
+public class SocialLoginPresenter implements SocialLoginContract.Presenter, SocialLoginModel.onClickButtonListener {
 
     private Context context;
-    private LoginModel loginModel;
-    private LoginContract.View view;
+    private SocialLoginModel loginModel;
+    private SocialLoginContract.View view;
 
     private LoginButton facebookLoginButton;
     private OAuthLoginButton naverLoginButton;
     private com.kakao.usermgmt.LoginButton kakaoLoginButton;
     private SignInButton googleLoginButton;
 
-    public LoginPresenter(Context context, LoginContract.View view, Social[] social, Activity activity) {
+    public SocialLoginPresenter(Context context, SocialLoginContract.View view, Social[] social, Activity activity) {
         this.context = context;
         this.view = view;
-        view.setPresenter(this);
-        loginModel = LoginModel.getInstance();
+        view.setSocialPresenter(this);
+        loginModel = SocialLoginModel.getInstance();
         loginModel.setModel(context, activity);
         loginModel.setListener(this);
 
         for (Social s : social) {
             switch (s) {
                 case FACEBOOK:
-                    FacebookSdk.sdkInitialize(context);
                     facebookLoginButton = new LoginButton(context);
                     break;
 
@@ -84,19 +82,6 @@ public class LoginPresenter implements LoginContract.Presenter, LoginModel.onCli
                 loginModel.setKakaoButton(kakaoLoginButton);
                 break;
 
-//            case FACEBOOK:
-//                facebookLoginButton.setLayoutParams(params);
-//                facebookLoginButton.setClickable(true);
-//
-//                relativeLayout.addView(facebookLoginButton, 0);
-//                relativeLayout.addView(imageView);
-//
-//                wrapperView.addView(relativeLayout, 0);
-//                wrapperView.setClickable(false);
-//
-//                loginModel.setFacebookButton(facebookLoginButton);
-//                break;
-
             case NAVER:
                 naverLoginButton.setLayoutParams(params);
                 naverLoginButton.setClickable(true);
@@ -142,6 +127,7 @@ public class LoginPresenter implements LoginContract.Presenter, LoginModel.onCli
 
         facebookLoginButton.setLayoutParams(params);
         facebookLoginButton.setClickable(true);
+        facebookLoginButton.setPadding(0, wrapperView.getLayoutParams().height, 0, wrapperView.getLayoutParams().height);
 
         relativeLayout.addView(facebookLoginButton, 0);
         relativeLayout.addView(imageView);

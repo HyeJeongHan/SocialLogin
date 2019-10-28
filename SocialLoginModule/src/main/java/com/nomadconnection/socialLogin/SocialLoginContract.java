@@ -7,7 +7,7 @@ import com.nomadconnection.socialLogin.base.BaseView;
 import com.nomadconnection.socialLogin.data.Social;
 import com.nomadconnection.socialLogin.data.SocialLoginUser;
 
-public interface LoginContract {
+public interface SocialLoginContract {
 
     interface View extends BaseView<Presenter> {
         void responseSocialLogin(SocialLoginUser loginUser);

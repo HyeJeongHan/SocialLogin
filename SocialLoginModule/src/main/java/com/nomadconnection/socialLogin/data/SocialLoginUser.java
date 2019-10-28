@@ -7,7 +7,8 @@ public class SocialLoginUser {
     private String email;
     private String phone;
     private String imageUrlStr;
-    private Error error;
+    private String accessToken;
+    private String error;
 
     public Social getSocial() {
         return social;
@@ -49,11 +50,19 @@ public class SocialLoginUser {
         this.imageUrlStr = imageUrlStr;
     }
 
-    public Error getError() {
+    public String getAccessToken() {
+        return accessToken;
+    }
+
+    public void setAccessToken(String accessToken) {
+        this.accessToken = accessToken;
+    }
+
+    public String getError() {
         return error;
     }
 
-    public void setError(Error error) {
+    public void setError(String error) {
         this.error = error;
     }
 }

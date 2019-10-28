@@ -54,9 +54,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class LoginModel {
+public class SocialLoginModel {
 
-    private static LoginModel instance = null;
+    private static SocialLoginModel instance = null;
 
     public static final int RC_SIGN_IN = 123;
     public static final int REQUEST_AUTHORIZATION = 1234;
@@ -89,9 +89,9 @@ public class LoginModel {
         void setUserInfo(SocialLoginUser userInfo);
     }
 
-    public static LoginModel getInstance() {
+    public static SocialLoginModel getInstance() {
         if (instance == null)
-            instance = new LoginModel();
+            instance = new SocialLoginModel();
         return instance;
     }
 
@@ -134,6 +134,9 @@ public class LoginModel {
             public void onFailure(ErrorResult errorResult) {
                 String message = "failed to get user info. msg=" + errorResult;
 //                CommonUtil.showToastShort(message);
+                SocialLoginUser socialLoginUser = new SocialLoginUser();
+                socialLoginUser.setError(errorResult.getErrorMessage());
+                listener.setUserInfo(socialLoginUser);
             }
 
             @Override
@@ -159,18 +162,28 @@ public class LoginModel {
                 socialLoginUser.setName(response.getNickname());
                 socialLoginUser.setEmail(response.getKakaoAccount().getEmail());
                 socialLoginUser.setImageUrlStr(response.getProfileImagePath());
+                socialLoginUser.setAccessToken(accessToken.getAccessToken());
 
                 listener.setUserInfo(socialLoginUser);
 
                 Log.e("user id : ", "" + response.getId());
-                Log.e("kakao access token >>> ", "" + accessToken.getAccessToken());
             }
 
             @Override
             public void onAccessTokenFailure(ErrorResult errorResult) {
-
+                SocialLoginUser socialLoginUser = new SocialLoginUser();
+                socialLoginUser.setError(errorResult.getErrorMessage());
+                listener.setUserInfo(socialLoginUser);
             }
         });
+    }
+
+    public void kakaoSessionCallBackNull() {
+        kakaoSession.addCallback(null);
+    }
+
+    public void closeKakaoSession() {
+        kakaoSession.close();
     }
     //endregion
 
@@ -206,6 +219,9 @@ public class LoginModel {
                             // If sign in fails, display a message to the user.
                             Logger.d("signInWithCredential:failure " + task.getException());
 
+                            SocialLoginUser socialLoginUser = new SocialLoginUser();
+                            socialLoginUser.setError(task.getException().getMessage());
+                            listener.setUserInfo(socialLoginUser);
                         }
 
                     }
@@ -228,6 +244,7 @@ public class LoginModel {
                     socialLoginUser.setName(acct.getDisplayName());
                     socialLoginUser.setEmail(acct.getEmail());
                     socialLoginUser.setImageUrlStr(acct.getPhotoUrl().toString());
+                    socialLoginUser.setAccessToken(mAccessToken);
 
                 } catch (UserRecoverableAuthException e) {
                     activity.startActivityForResult(e.getIntent(), REQUEST_AUTHORIZATION);
@@ -250,6 +267,16 @@ public class LoginModel {
             }
         }.execute();
 
+    }
+
+    public void googleSignOut() {
+        mGoogleSignInClient.signOut()
+                .addOnCompleteListener(activity, new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        // ...
+                    }
+                });
     }
     //endregion
 
@@ -276,6 +303,8 @@ public class LoginModel {
 
                     SocialLoginUser socialLoginUser = new SocialLoginUser();
                     socialLoginUser.setSocial(Social.NAVER);
+                    socialLoginUser.setAccessToken(accessToken);
+                    listener.setUserInfo(socialLoginUser);
 
                 } else {//로그인 실패
                     String errorCode = naverLoginInstance.getLastErrorCode(context).getCode();
@@ -283,6 +312,9 @@ public class LoginModel {
 
                     Log.e("errorCode", "errorCode >>> " + errorCode + "         errorDesc >>> " + errorDesc);
 
+                    SocialLoginUser socialLoginUser = new SocialLoginUser();
+                    socialLoginUser.setError(errorDesc);
+                    listener.setUserInfo(socialLoginUser);
 
 //                    CommonUtil.showToastShort("errorCode >>> " + errorCode + "\n errorDesc >>> " + errorDesc);
                 }
@@ -391,10 +423,13 @@ public class LoginModel {
             @Override
             public void onError(FacebookException error) {
                 Log.e("Callback :: ", "onError : " + error.getMessage());
+                SocialLoginUser socialLoginUser = new SocialLoginUser();
+                socialLoginUser.setError(error.getMessage());
+                listener.setUserInfo(socialLoginUser);
             }
 
             // 사용자 정보 요청
-            public void requestMe(AccessToken token) {
+            public void requestMe(final AccessToken token) {
                 GraphRequest graphRequest = GraphRequest.newMeRequest(token,
                         new GraphRequest.GraphJSONObjectCallback() {
                             @Override
@@ -406,6 +441,7 @@ public class LoginModel {
                                     socialLoginUser.setSocial(Social.FACEBOOK);
                                     socialLoginUser.setName(object.get("name").toString());
                                     socialLoginUser.setEmail(object.get("email").toString());
+                                    socialLoginUser.setAccessToken(token.toString());
 //                                    socialLoginUser.setImageUrlStr(getFacebookProfilePicture(object.get("id").toString()));
                                     listener.setUserInfo(socialLoginUser);
 
