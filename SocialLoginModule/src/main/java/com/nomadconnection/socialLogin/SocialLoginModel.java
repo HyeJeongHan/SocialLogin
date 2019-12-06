@@ -13,8 +13,10 @@ import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
 import com.facebook.*;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
@@ -43,6 +45,7 @@ import com.nhn.android.naverlogin.OAuthLoginHandler;
 import com.nhn.android.naverlogin.ui.view.OAuthLoginButton;
 import com.nomadconnection.socialLogin.data.Social;
 import com.nomadconnection.socialLogin.data.SocialLoginUser;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -103,6 +106,7 @@ public class SocialLoginModel {
     //region kakao
     private void initKakaoLogin() {
         Log.e("", "initKakaoLogin");
+        getHashKey(context);
         kakaoSession = Session.getCurrentSession();
         kakaoSession.addCallback(new ISessionCallback() {
             @Override
@@ -341,7 +345,6 @@ public class SocialLoginModel {
 //            }
 //        });
 
-        getHashKey(context);
     }
 
     private class RequestNaverApiTask extends AsyncTask<Void, Void, String> {
@@ -553,6 +556,41 @@ public class SocialLoginModel {
         NAVER_CLIENT_ID = id;
         NAVER_CLIENT_SECRET = secret;
         NAVER_CLIENT_NAME = name;
+    }
+
+    public com.kakao.usermgmt.LoginButton getKakaoLoginButton() {
+        if (kakaoLoginButton == null) {
+            kakaoLoginButton = new com.kakao.usermgmt.LoginButton(context);
+        }
+        return kakaoLoginButton;
+    }
+
+    public Session kakaoSession() {
+        if (kakaoSession == null) {
+            kakaoSession = Session.getCurrentSession();
+        }
+        return kakaoSession;
+    }
+
+    public OAuthLoginButton getNaverLoginButton() {
+        if (oauthLoginNaverButton == null) {
+            oauthLoginNaverButton = new OAuthLoginButton(context);
+        }
+        return oauthLoginNaverButton;
+    }
+
+    public SignInButton getGoogleButton() {
+        if (googleButton == null) {
+            googleButton = new SignInButton(context);
+        }
+        return googleButton;
+    }
+
+    public LoginButton getFacebookButton() {
+        if (oauthLoginFacebookButton == null) {
+            oauthLoginFacebookButton = new LoginButton(context);
+        }
+        return oauthLoginFacebookButton;
     }
 
     public static void setGoogleClientInfo(String id) {

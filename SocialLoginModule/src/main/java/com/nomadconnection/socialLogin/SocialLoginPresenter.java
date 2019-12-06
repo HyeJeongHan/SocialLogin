@@ -139,6 +139,24 @@ public class SocialLoginPresenter implements SocialLoginContract.Presenter, Soci
     }
 
     @Override
+    public void addSocialLoginButtonNoLayout(Social social) {
+        switch (social) {
+            case KAKAO:
+                loginModel.setKakaoButton(kakaoLoginButton);
+                break;
+
+            case NAVER:
+                loginModel.setNaverButton(naverLoginButton);
+                break;
+
+            case GOOGLE:
+                loginModel.setGoogleButton(googleLoginButton);
+                break;
+
+        }
+    }
+
+    @Override
     public void setUserInfo(SocialLoginUser userInfo) {
         view.responseSocialLogin(userInfo);
     }

@@ -16,5 +16,7 @@ public interface SocialLoginContract {
     interface Presenter extends BasePresenter {
         void addSocialLoginButton(Social social, ViewGroup wrapperView);
         void addFacebookLoginButton(Social social, ViewGroup wrapperView, CallbackManager callbackManager);
+
+        void addSocialLoginButtonNoLayout(Social social);
     }
 }
