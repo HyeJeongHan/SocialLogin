@@ -1,5 +1,6 @@
 package com.nomadconnection.socialLogin;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -103,7 +104,9 @@ public class SocialLoginModel {
         this.activity = activity;
     }
 
-    //region kakao
+    //---------------------------------------------------------------------------------------------
+    // kakao
+    //---------------------------------------------------------------------------------------------
     private void initKakaoLogin() {
         Log.e("", "initKakaoLogin");
         getHashKey(context);
@@ -189,9 +192,10 @@ public class SocialLoginModel {
     public void closeKakaoSession() {
         kakaoSession.close();
     }
-    //endregion
 
-    //region google
+    //---------------------------------------------------------------------------------------------
+    // google
+    //---------------------------------------------------------------------------------------------
     private void initGoogleLogin() {
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(GOOGLE_CLIENT_ID)
@@ -282,9 +286,11 @@ public class SocialLoginModel {
                     }
                 });
     }
-    //endregion
 
-    //region naver
+    //---------------------------------------------------------------------------------------------
+    // naver
+    //---------------------------------------------------------------------------------------------
+    @SuppressLint("HandlerLeak")
     private void initNaverLogin() {
         naverLoginInstance = OAuthLogin.getInstance();
         naverLoginInstance.init(context, NAVER_CLIENT_ID, NAVER_CLIENT_SECRET, NAVER_CLIENT_NAME);
@@ -347,6 +353,10 @@ public class SocialLoginModel {
 
     }
 
+    public void logoutNaver() {
+        naverLoginInstance.logout(context);
+    }
+
     private class RequestNaverApiTask extends AsyncTask<Void, Void, String> {
         @Override
         protected void onPreExecute() {//작업이 실행되기 전에 먼저 실행.
@@ -401,9 +411,10 @@ public class SocialLoginModel {
             }
         }
     }
-    //endregion
 
-    //region facebook
+    //---------------------------------------------------------------------------------------------
+    // facebook
+    //---------------------------------------------------------------------------------------------
     private void initFacebookLogin() {
         oauthLoginFacebookButton.setReadPermissions(Arrays.asList("public_profile", "email"));
         oauthLoginFacebookButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
@@ -465,8 +476,10 @@ public class SocialLoginModel {
         //로그아웃
         //LoginManager.getInstance().logOut();
     }
-    //endregion
 
+    //---------------------------------------------------------------------------------------------
+    // public method
+    //---------------------------------------------------------------------------------------------
     @Nullable
     public static String getHashKey(Context context) {
 
@@ -552,12 +565,6 @@ public class SocialLoginModel {
         });
     }
 
-    public static void setNaverClientInfo(String id, String secret, String name) {
-        NAVER_CLIENT_ID = id;
-        NAVER_CLIENT_SECRET = secret;
-        NAVER_CLIENT_NAME = name;
-    }
-
     public com.kakao.usermgmt.LoginButton getKakaoLoginButton() {
         if (kakaoLoginButton == null) {
             kakaoLoginButton = new com.kakao.usermgmt.LoginButton(context);
@@ -591,6 +598,12 @@ public class SocialLoginModel {
             oauthLoginFacebookButton = new LoginButton(context);
         }
         return oauthLoginFacebookButton;
+    }
+
+    public static void setNaverClientInfo(String id, String secret, String name) {
+        NAVER_CLIENT_ID = id;
+        NAVER_CLIENT_SECRET = secret;
+        NAVER_CLIENT_NAME = name;
     }
 
     public static void setGoogleClientInfo(String id) {
