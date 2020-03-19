@@ -3,6 +3,81 @@
   <component name="issues">
     <option name="index">
       <map>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/data/AddHeaderInterceptor.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/data/RemoteClient.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/data/api/ContactInterface.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/data/api/NaverInterface.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/data/repository/CallRepository.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/data/repository/ErrorData.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/data/repository/NaverRefreshTokenData.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/data/repository/NaverRepository.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/data/repository/naverRepository.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/ui/MyViewModel.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/ui/login/LoginActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/ui/login/LoginViewModel.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/ui/naver/APIExamCafeJoin.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/utils/SharedPreferenceUtils.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../piccko/app/build.gradle">
           <value>
             <set />
@@ -84,6 +159,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/SocialLoginModule/src/main/java/com/nomadconnection/socialLogin/SocialLoginModel.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/SocialLoginModule/src/main/java/com/nomadconnection/socialLogin/data/SocialLoginUser.java">
           <value>
             <set />
           </value>

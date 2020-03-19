@@ -305,15 +305,16 @@ public class SocialLoginModel {
                     String refreshToken = naverLoginInstance.getRefreshToken(context);
                     long expiresAt = naverLoginInstance.getExpiresAt(context);
                     String tokenType = naverLoginInstance.getTokenType(context);
-                    Log.e("accessToken >>>>   ", "" + accessToken);
-                    Log.e("refreshToken >>>>   ", "" + refreshToken);
-                    Log.e("expiresAt >>>>   ", "" + String.valueOf(expiresAt));
-                    Log.e("tokenType >>>>   ", "" + tokenType);
-                    Log.e("state >>>>   ", "" + naverLoginInstance.getState(context).toString());
+                    Log.i("accessToken >>>>   ", "" + accessToken);
+                    Log.i("refreshToken >>>>   ", "" + refreshToken);
+                    Log.i("expiresAt >>>>   ", "" + String.valueOf(expiresAt));
+                    Log.i("tokenType >>>>   ", "" + tokenType);
+                    Log.i("state >>>>   ", "" + naverLoginInstance.getState(context).toString());
 
                     SocialLoginUser socialLoginUser = new SocialLoginUser();
                     socialLoginUser.setSocial(Social.NAVER);
                     socialLoginUser.setAccessToken(accessToken);
+                    socialLoginUser.setRefreshToken(refreshToken);
                     listener.setUserInfo(socialLoginUser);
 
                 } else {//로그인 실패
