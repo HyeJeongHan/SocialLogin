@@ -39,6 +39,7 @@ import com.kakao.network.ErrorResult;
 import com.kakao.usermgmt.UserManagement;
 import com.kakao.usermgmt.callback.MeV2ResponseCallback;
 import com.kakao.usermgmt.response.MeV2Response;
+import com.kakao.util.OptionalBoolean;
 import com.kakao.util.exception.KakaoException;
 import com.kakao.util.helper.log.Logger;
 import com.nhn.android.naverlogin.OAuthLogin;
@@ -46,6 +47,7 @@ import com.nhn.android.naverlogin.OAuthLoginHandler;
 import com.nhn.android.naverlogin.ui.view.OAuthLoginButton;
 import com.nomadconnection.socialLogin.data.Social;
 import com.nomadconnection.socialLogin.data.SocialLoginUser;
+import com.nomadconnection.socialLogin.naver.MemberProfile;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -55,7 +57,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.security.MessageDigest;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class SocialLoginModel {
@@ -70,19 +71,19 @@ public class SocialLoginModel {
     private static String NAVER_CLIENT_NAME;
     private static String GOOGLE_CLIENT_ID;
 
-    private OAuthLogin naverLoginInstance;//naver
-    private OAuthLoginButton oauthLoginNaverButton;
+    public OAuthLogin naverLoginInstance;//naver
+    public OAuthLoginButton oauthLoginNaverButton;
 
-    private CallbackManager callbackManager;//facebook
-    private LoginButton oauthLoginFacebookButton;
+    public CallbackManager callbackManager;//facebook
+    public LoginButton oauthLoginFacebookButton;
 
-    private Session kakaoSession;
-    private com.kakao.usermgmt.LoginButton kakaoLoginButton;//kakao
+    public Session kakaoSession;
+    public com.kakao.usermgmt.LoginButton kakaoLoginButton;//kakao
 
     private GoogleSignInClient mGoogleSignInClient;
     private FirebaseAuth mAuth;
     private String mAccessToken;
-    private SignInButton googleButton;
+    public SignInButton googleButton;
 
     private Context context;
     private Activity activity;
@@ -129,7 +130,12 @@ public class SocialLoginModel {
         List<String> keys = new ArrayList<>();
         keys.add("properties.nickname");
         keys.add("properties.profile_image");
+        keys.add("properties.thumbnail_image");
+        keys.add("kakao_account.profile");
         keys.add("kakao_account.email");
+        keys.add("kakao_account.age_range");
+        keys.add("kakao_account.birthday");
+        keys.add("kakao_account.gender");
 
         UserManagement.getInstance().me(keys, new MeV2ResponseCallback() {
             @Override
@@ -166,10 +172,22 @@ public class SocialLoginModel {
 
                 SocialLoginUser socialLoginUser = new SocialLoginUser();
                 socialLoginUser.setSocial(Social.KAKAO);
+                socialLoginUser.setId(String.valueOf(response.getId()));
                 socialLoginUser.setName(response.getNickname());
                 socialLoginUser.setEmail(response.getKakaoAccount().getEmail());
                 socialLoginUser.setImageUrlStr(response.getProfileImagePath());
                 socialLoginUser.setAccessToken(accessToken.getAccessToken());
+                if (response.getKakaoAccount().hasGender() == OptionalBoolean.TRUE) {
+                    socialLoginUser.setGender(response.getKakaoAccount().getGender().getValue());
+                } else {
+                    socialLoginUser.setGender("");
+                }
+                socialLoginUser.setBirthday(response.getKakaoAccount().getBirthday());
+                if (response.getKakaoAccount().hasAgeRange() == OptionalBoolean.TRUE) {
+                    socialLoginUser.setAgeRange(response.getKakaoAccount().getAgeRange().getValue());
+                } else {
+                    socialLoginUser.setAgeRange("");
+                }
 
                 listener.setUserInfo(socialLoginUser);
 
@@ -317,6 +335,8 @@ public class SocialLoginModel {
                     socialLoginUser.setRefreshToken(refreshToken);
                     listener.setUserInfo(socialLoginUser);
 
+                    new MemberProfile(accessToken, socialLoginUser).execute();
+
                 } else {//로그인 실패
                     String errorCode = naverLoginInstance.getLastErrorCode(context).getCode();
                     String errorDesc = naverLoginInstance.getLastErrorDesc(context);
@@ -417,7 +437,7 @@ public class SocialLoginModel {
     // facebook
     //---------------------------------------------------------------------------------------------
     private void initFacebookLogin() {
-        oauthLoginFacebookButton.setReadPermissions(Arrays.asList("public_profile", "email"));
+//        oauthLoginFacebookButton.setReadPermissions(Arrays.asList("public_profile", "email"));
         oauthLoginFacebookButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             // 로그인 성공 시 호출 됩니다. Access Token 발급 성공.
             @Override
@@ -496,7 +516,7 @@ public class SocialLoginModel {
                 md = MessageDigest.getInstance("SHA");
                 md.update(signature.toByteArray());
                 keyHash = new String(Base64.encode(md.digest(), 0));
-                Log.e(TAG, keyHash);
+                Log.i(TAG, keyHash);
             }
         } catch (Exception e) {
             Log.e("name not found", e.toString());
@@ -585,6 +605,10 @@ public class SocialLoginModel {
             oauthLoginNaverButton = new OAuthLoginButton(context);
         }
         return oauthLoginNaverButton;
+    }
+
+    public void performNaverLogin() {
+        oauthLoginNaverButton.performClick();
     }
 
     public SignInButton getGoogleButton() {

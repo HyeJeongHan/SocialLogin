@@ -3,9 +3,13 @@ package com.nomadconnection.socialLogin.data;
 public class SocialLoginUser {
 
     private Social social;
+    private String id;
     private String name;
     private String email;
     private String phone;
+    private String gender;
+    private String ageRange;
+    private String birthday;
     private String imageUrlStr;
     private String accessToken;
     private String refreshToken;
@@ -73,5 +77,37 @@ public class SocialLoginUser {
 
     public void setError(String error) {
         this.error = error;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getAgeRange() {
+        return ageRange;
+    }
+
+    public void setAgeRange(String ageRange) {
+        this.ageRange = ageRange;
+    }
+
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

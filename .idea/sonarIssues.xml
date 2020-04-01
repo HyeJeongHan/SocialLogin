@@ -3,7 +3,27 @@
   <component name="issues">
     <option name="index">
       <map>
+        <entry key="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.threeten/threetenbp/1.3.7/643b4e619ee5692df69997fc25c29fef18c8d011/threetenbp-1.3.7-no-tzdb.jar!/org/threeten/bp/LocalDate.class">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MobileCrm/app/src/main/java/com/project/mobilecrm/data/source/local/ContactDao.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/.gitignore">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../MySPOT/app/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/AndroidManifest.xml">
           <value>
             <set />
           </value>
@@ -28,12 +48,42 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/data/local/ContactDao.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/data/local/UserInfoDao.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/data/local/UserInfoDatabase.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/data/local/UserTokenDao.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/data/local/UserTokenDatabase.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/data/repository/CallRepository.kt">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/data/repository/ErrorData.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/data/repository/NaverErrorData.kt">
           <value>
             <set />
           </value>
@@ -48,12 +98,62 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/data/repository/NaverResponseData.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/data/repository/UserRepository.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/data/repository/entity/NaverGetProfileData.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/data/repository/entity/TokenData.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/data/repository/entity/UserInfoAndTokenData.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/data/repository/entity/UserInfoData.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/data/repository/naverRepository.kt">
           <value>
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/ui/MainActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/ui/MyViewModel.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/ui/TestActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/ui/TimeActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/ui/find/AuthPhoneFragment.kt">
           <value>
             <set />
           </value>
@@ -73,7 +173,202 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/ui/naver/ApiExamMemberProfile.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/ui/naver/CafePost.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/ui/naver/NaverCafeJoin.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/ui/naver/NaverCafePost.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/ui/naver/NaverMemberProfile.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/ui/signup/IdEmailFragment.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/ui/time/DayViewContainer.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/ui/time/TimeActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/utils/CommonUtil.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/utils/Logger.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/utils/MyRecord.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/utils/MyView.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/utils/SharedPreferenceUtils.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/utils/Type.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/utils/layout/CustomEditText.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/java/com/zaksim/myspot/utils/layout/PopupDialog.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/res/drawable/background_fill.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/res/drawable/layer_progressbar.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/res/drawable/progress_fill.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/res/drawable/shape_calendar_bg_0.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/res/drawable/shape_calendar_bg_2.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/res/drawable/shape_calendar_bg_3.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/res/drawable/shape_calendar_bg_4.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/res/drawable/stats_full.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/res/drawable/stats_progress.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/res/layout/activity_main.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/res/layout/activity_test.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/res/layout/activity_time.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/res/layout/calendar_day_layout.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/res/layout/calendar_header.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/res/layout/calendar_week_layout.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/res/layout/dialog_popup.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/res/layout/layout_record_custom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/app/src/main/res/values/colors.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySPOT/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../blockchain-campus/app/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../blockchain-campus/app/src/main/AndroidManifest.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../blockchain-campus/app/src/main/java/com/nomadconnection/blockchaincampus/Urls.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../blockchain-campus/app/src/main/java/com/nomadconnection/blockchaincampus/ui/LaunchActivity.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../blockchain-campus/app/src/main/java/com/nomadconnection/blockchaincampus/ui/main/MainActivity.java">
           <value>
             <set />
           </value>
@@ -83,7 +378,32 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../piccko/app/src/main/AndroidManifest.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../piccko/app/src/main/java/com/zaksim/integrated/common/type/ErrorType.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../piccko/app/src/main/java/com/zaksim/integrated/fcm/FirebaseMessagingService.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../piccko/app/src/main/java/com/zaksim/integrated/main/MainActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../piccko/app/src/main/java/com/zaksim/integrated/main/MainPresenter.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../piccko/app/src/main/java/com/zaksim/integrated/scene/find/FindPwResetFragment.kt">
           <value>
             <set />
           </value>
@@ -114,6 +434,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../piccko/app/src/main/java/com/zaksim/integrated/scene/signUp/SignUpActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../piccko/app/src/main/java/com/zaksim/integrated/scene/splash/SplashActivity.kt">
           <value>
             <set />
           </value>
@@ -158,12 +483,57 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/SocialLoginModule/src/main/AndroidManifest.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/SocialLoginModule/src/main/java/com/nomadconnection/socialLogin/SocialLoginModel.java">
           <value>
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/SocialLoginModule/src/main/java/com/nomadconnection/socialLogin/SocialLoginPresenter.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/SocialLoginModule/src/main/java/com/nomadconnection/socialLogin/data/SocialLoginUser.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/SocialLoginModule/src/main/java/com/nomadconnection/socialLogin/naver/ApiExamMemberProfile.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/SocialLoginModule/src/main/java/com/nomadconnection/socialLogin/naver/MemberProfile.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/android/com/moduletest/MainActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/a.dummy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/fragment.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/fragment.kt">
           <value>
             <set />
           </value>
